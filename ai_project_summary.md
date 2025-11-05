@@ -141,7 +141,8 @@ Xcode Command Line Tools: This is essential for compiling some Python packages. 
 
 Bash
 
-xcode-select --install
+```xcode-select --install
+```
 Homebrew: If you don't have it, install it from brew.sh.
 
 Git:
