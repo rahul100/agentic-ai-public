@@ -150,57 +150,69 @@ Homebrew: If you don't have it, install it from brew.sh.
 Git:
 
 Bash
-
+```bash
 brew install git
+```
 Python 3.11: The project is based on 3.11.
 
 Bash
-
+```bash
 brew install python@3.11
+```
 PostgreSQL: This is the database.
 
 Bash
-
+```bash
 brew install postgresql
+```
 Step 2: Get the Code
 Clone the repository and move into the directory.
 
 Bash
-
+```bash
 git clone https://github.com/https-deeplearning-ai/agentic-ai-public.git
 cd agentic-ai-public
+```
 Step 3: Set Up the Python Environment
 It's best practice to use a virtual environment to avoid conflicts.
 
 Bash
 
 # Create a virtual environment using Python 3.11
+```bash
 python3.11 -m venv venv
-
+```
 # Activate it (you must do this every time you open a new terminal)
+```bash
 source venv/bin/activate
+```
 
 # Install all the required Python packages
+```bash
 pip install -r requirements.txt
+```
 Step 4: Set Up the PostgreSQL Database
 The app needs a running database, a user, and a password that match its configuration.
 
 Start the PostgreSQL service:
 
 Bash
-
+```bash
 brew services start postgresql
+```
 Create the database: (The default is appdb)
 
 Bash
-
+```bash
 createdb appdb
+```
 Create the user and password: (Defaults are app and local)
 
 Bash
-
+```bash
 createuser app
 psql -c "ALTER USER app WITH PASSWORD 'local';"
+```
 Step 5: Get API Keys & Create .env File
 The agents need API keys to function.
 
@@ -215,8 +227,9 @@ Go to platform.openai.com and get your API key. (The aisuite library used here i
 Create the .env file: This file securely stores your keys where the app can find them.
 
 Bash
-
+```bash
 touch .env
+```
 Edit the .env file (e.g., nano .env) and add the following, pasting in your actual keys.
 
 Ini, TOML
@@ -232,7 +245,8 @@ You're all set. With your virtual environment still active (you should see (venv
 
 Bash
 
-bash```uvicorn main:app --host 0.0.0.0 --port 8000
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 You'll see output indicating the server is running.
 
