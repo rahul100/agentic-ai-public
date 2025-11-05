@@ -232,7 +232,8 @@ You're all set. With your virtual environment still active (you should see (venv
 
 Bash
 
-uvicorn main:app --host 0.0.0.0 --port 8000
+```bash uvicorn main:app --host 0.0.0.0 --port 8000
+```
 You'll see output indicating the server is running.
 
 Step 7: Access Your Agent
